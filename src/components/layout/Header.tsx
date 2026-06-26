@@ -35,7 +35,7 @@ export function Header() {
           href="/"
           className="flex items-center rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-azure focus-visible:ring-offset-2"
         >
-          <Image src="/images/logo-blue.svg" alt="Changan" width={104} height={28} className="h-7 w-auto" priority />
+          <Image src="/images/logo-blue.svg" alt="Changan" width={700} height={501} className="h-7 w-auto" priority />
         </Link>
 
         <nav aria-label="Navigation principale" className="hidden items-center gap-8 lg:flex">

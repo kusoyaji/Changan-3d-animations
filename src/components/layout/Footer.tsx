@@ -31,7 +31,7 @@ export function Footer() {
             href="/"
             className="inline-flex w-fit rounded-[10px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
           >
-            <Image src="/images/logo.svg" alt="Changan" width={120} height={32} className="h-8 w-auto" />
+            <Image src="/images/logo.svg" alt="Changan" width={700} height={501} className="h-8 w-auto" />
           </Link>
           <p className="max-w-[260px] text-[15px] text-white/70">
             Changan au Maroc : des véhicules hybrides et thermiques pensés pour votre quotidien.

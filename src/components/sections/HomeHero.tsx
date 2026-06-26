@@ -88,7 +88,7 @@ export function HomeHero() {
             <span className="font-display text-[13px] font-semibold text-ink">
               {spec.value}
             </span>
-            <span className="font-body text-xs text-faint">
+            <span className="font-body text-xs text-muted">
               {spec.label}
             </span>
           </div>

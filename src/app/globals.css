@@ -9,6 +9,8 @@
   --color-field: #ECF1F8;
   --color-panel: #F7FAFD;
   --color-sky: #DBE6F5;
+  --color-line: #E0E8F3;
+  --color-faint: #7A8AA1;
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);

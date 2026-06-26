@@ -79,7 +79,7 @@ export function HomeHero() {
         {SPECS.map((spec) => (
           <div
             key={spec.value}
-            className="flex items-center gap-2.5 border-r border-[#e0e8f3] py-1 pr-6 last:border-r-0 sm:pr-8 [&:not(:first-child)]:ml-6 sm:[&:not(:first-child)]:ml-8"
+            className="flex items-center gap-2.5 border-r border-line py-1 pr-6 last:border-r-0 sm:pr-8 [&:not(:first-child)]:ml-6 sm:[&:not(:first-child)]:ml-8"
           >
             <span
               aria-hidden="true"
@@ -88,7 +88,7 @@ export function HomeHero() {
             <span className="font-display text-[13px] font-semibold text-ink">
               {spec.value}
             </span>
-            <span className="font-body text-xs text-[#7a8aa1]">
+            <span className="font-body text-xs text-faint">
               {spec.label}
             </span>
           </div>

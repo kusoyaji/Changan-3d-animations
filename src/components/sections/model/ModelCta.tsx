@@ -23,7 +23,7 @@ export function ModelCta({ name }: ModelCtaProps) {
       <Container className="relative z-10 text-center">
         <Reveal>
           <h2 className="mx-auto max-w-[640px] font-display text-[clamp(2rem,4.5vw,3rem)] font-bold leading-[1.05] tracking-[-0.02em] text-white">
-            Envie d'essayer le {name}&nbsp;?
+            Envie d&apos;essayer le {name}&nbsp;?
           </h2>
         </Reveal>
 

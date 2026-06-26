@@ -6,7 +6,7 @@ import { allModels } from "@/content/models";
 
 export function Lineup() {
   return (
-    <section className="bg-field py-20 lg:py-28">
+    <section className="border-t border-sky bg-field py-20 lg:py-28">
       <Container>
         <Reveal>
           <Eyebrow>La gamme</Eyebrow>

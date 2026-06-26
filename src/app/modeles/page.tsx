@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     "Découvrez la gamme complète de véhicules Changan au Maroc : SUV, berlines et hybrides rechargeables.",
 };
 
-export default function ModeelsPage() {
+export default function ModelesPage() {
   return (
     <>
       <section className="bg-field py-12 lg:py-16">

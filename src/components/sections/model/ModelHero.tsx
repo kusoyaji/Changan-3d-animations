@@ -67,6 +67,7 @@ export function ModelHero({ model }: { model: Model }) {
             alt={model.name}
             fill
             priority
+            sizes="(min-width: 1024px) 50vw, 100vw"
             className="object-contain drop-shadow-[0_40px_42px_rgba(15,42,77,0.22)]"
           />
         </Reveal>

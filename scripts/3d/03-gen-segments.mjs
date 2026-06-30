@@ -28,10 +28,12 @@ for (const seg of todo) {
     image_url: startUrl,
     tail_image_url: endUrl,
     duration: seg.durationSec >= 8 ? "10" : "5",
-    aspect_ratio: "16:9",
+    cfg_scale: 0.5,
     negative_prompt:
       "different vehicle, changing background, background color shift, warping, distortion, melting, extra wheels, deformed body, text changes, license plate changes, watermark",
   };
+  // v1.6 accepts aspect_ratio; v2.1 does not (it follows the input image's ratio).
+  if (seg.model.includes("v1.6")) input.aspect_ratio = "16:9";
   const videoUrl = await falVideo(seg.model, input);
   await downloadFile(videoUrl, out);
   console.log(`saved ${out}`);

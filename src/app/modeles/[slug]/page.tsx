@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ModelHero } from "@/components/sections/model/ModelHero";
 import { ColorVariantSwitcher } from "@/components/sections/model/ColorVariantSwitcher";
 import { FeatureSection } from "@/components/sections/model/FeatureSection";
-import { SpinViewer } from "@/components/sections/model/SpinViewer";
+import { CinematicSequence } from "@/components/sections/model/CinematicSequence";
 import { ModelGallery } from "@/components/sections/model/ModelGallery";
 import { Specifications } from "@/components/sections/model/Specifications";
 import { ModelCta } from "@/components/sections/model/ModelCta";
@@ -58,7 +58,7 @@ export default async function Page({
         features={model.equipment}
         alt
       />
-      <SpinViewer frames={model.spinFrames ?? []} name={model.name} />
+      <CinematicSequence data={model.cinematic3d} name={model.name} />
       <ModelGallery images={model.gallery} name={model.name} />
       <Specifications specs={model.specs} pdf={model.pdf} id="specifications" />
       <ModelCta name={model.name} />

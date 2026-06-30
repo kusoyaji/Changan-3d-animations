@@ -48,8 +48,23 @@ export const cs55Phev: Model = {
     { group: "Autonomie", label: "Combinée", value: "1 100 km" },
     { group: "Performance", label: "0–100 km/h", value: "8,5 s" },
   ],
-  hasSpin: true,
-  spinFrames: ["00", "01", "02", "03", "04"].map(
-    (n) => `/images/model/cs55-phev/spin/frame-${n}.webp`
-  ),
+  hasSpin: false,
+  cinematic3d: {
+    frameCount: 120,
+    mobileFrameCount: 60,
+    framePath: "/images/model/cs55-phev/3d/desktop/{i}.avif",
+    mobileFramePath: "/images/model/cs55-phev/3d/mobile/{i}.avif",
+    poster: "/images/model/cs55-phev/3d/poster.avif",
+    webpFallback: true,
+    beats: [
+      { at: 0, eyebrow: "Plan 01 · Vue aérienne", title: "Six mètres au-dessus", text: "La caméra plonge depuis le ciel." },
+      { at: 0.13, eyebrow: "Plan 02 · Face avant", title: "Calandre diamant" },
+      { at: 0.27, eyebrow: "Plan 03 · Trois-quarts avant", title: "Le regard LED" },
+      { at: 0.41, eyebrow: "Plan 04 · Profil", title: "Des lignes qui filent" },
+      { at: 0.55, eyebrow: "Plan 05 · Trois-quarts arrière", title: "Épaules musclées" },
+      { at: 0.68, eyebrow: "Plan 06 · Face arrière", title: "Signature lumineuse" },
+      { at: 0.81, eyebrow: "Plan 07 · Tour complet", title: "Le flanc opposé" },
+      { at: 0.92, eyebrow: "Plan 08 · À bord", title: "Cuir. Écrans. Silence." },
+    ],
+  },
 };

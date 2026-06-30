@@ -169,7 +169,9 @@ export function CinematicSequence({
         const el = capRefs.current[i];
         if (!el) continue;
         const d = Math.abs(cur - beats[i].at);
-        const op = Math.max(0, 1 - d * 6);
+        // Plateau then quick fade so only the nearest beat shows (no overlap
+        // between adjacent beats, which sit ~0.13 of scroll-progress apart).
+        const op = d <= 0.03 ? 1 : Math.max(0, 1 - (d - 0.03) / 0.03);
         el.style.opacity = op.toFixed(3);
         el.style.transform = `translateY(${((1 - op) * 16).toFixed(1)}px)`;
       }

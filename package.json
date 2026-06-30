@@ -9,7 +9,14 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "3d:ping": "node scripts/3d/ping.mjs",
+    "3d:prep": "node scripts/3d/01-prep-keyframes.mjs",
+    "3d:gen-keyframes": "node scripts/3d/02-gen-keyframes.mjs",
+    "3d:gen": "node scripts/3d/03-gen-segments.mjs",
+    "3d:stitch": "node scripts/3d/04-stitch.mjs",
+    "3d:extract": "node scripts/3d/05-extract.mjs",
+    "3d:optimize": "node scripts/3d/06-optimize.mjs"
   },
   "dependencies": {
     "next": "16.2.9",
@@ -17,6 +24,7 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@fal-ai/client": "^1.10.1",
     "@playwright/test": "^1.61.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
@@ -28,7 +36,9 @@
     "@vitejs/plugin-react": "^6.0.3",
     "eslint": "^9",
     "eslint-config-next": "16.2.9",
+    "ffmpeg-static": "^5.3.0",
     "jsdom": "^29.1.1",
+    "sharp": "^0.35.2",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vitest": "^4.1.9"

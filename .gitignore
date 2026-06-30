@@ -45,3 +45,6 @@ next-env.d.ts
 
 # playwright mcp artifacts
 .playwright-mcp/
+
+# 3D pipeline intermediates (raw video/frames). Only optimized outputs in public/ are committed.
+scripts/3d/work/

@@ -58,3 +58,5 @@ scripts/3d/work/
 /public/images/CS55PHEV-ImagesFor3D/
 # Raw AI-generated master videos (superseded by the extracted frame sequence)
 /public/images/model/cs55-phev/*.mp4
+# Stray WhatsApp drops that don't belong to the frame sequence
+WhatsApp Image*

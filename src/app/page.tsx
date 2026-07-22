@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomeHero } from "@/components/sections/HomeHero";
+import { QuickActions } from "@/components/sections/QuickActions";
 import { Lineup } from "@/components/sections/Lineup";
 import { HybridHighlight } from "@/components/sections/HybridHighlight";
 import { ShowroomTeaser } from "@/components/sections/ShowroomTeaser";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <>
       <HomeHero />
+      <QuickActions />
       <Lineup />
       <HybridHighlight />
       <ShowroomTeaser />

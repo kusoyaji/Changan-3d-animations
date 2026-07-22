@@ -17,7 +17,7 @@ export function Lineup() {
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {allModels.map((model, i) => (
-            <Reveal key={model.slug} delay={i * 70}>
+            <Reveal key={model.slug} delay={i * 70} className="min-w-0">
               <ModelCard model={model} />
             </Reveal>
           ))}

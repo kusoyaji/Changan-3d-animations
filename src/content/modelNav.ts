@@ -12,10 +12,10 @@ export type ModelNavItem = {
   highlights: NavHighlight[];
 };
 
-// Derive the three key figures shown in the navbar preview from a model's
-// existing spec sheet — no duplicated data. Power comes from the first spec
-// carrying a "…CH" value; transmission and efficiency from labelled rows.
-function deriveHighlights(m: Model): NavHighlight[] {
+// Derive the three key figures shown in the navbar preview / model cards from
+// a model's existing spec sheet — no duplicated data. Power comes from the
+// first spec carrying a "…CH" value; transmission and efficiency from labels.
+export function modelHighlights(m: Model): NavHighlight[] {
   const byLabel = (label: string) => m.specs.find((s) => s.label === label)?.value;
   const out: NavHighlight[] = [];
 
@@ -41,5 +41,5 @@ export const modelNavItems: ModelNavItem[] = allModels.map((m) => ({
   tagline: m.tagline,
   price: m.price,
   image: m.heroDesktop,
-  highlights: deriveHighlights(m),
+  highlights: modelHighlights(m),
 }));

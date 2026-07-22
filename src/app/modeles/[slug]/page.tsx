@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ModelHero } from "@/components/sections/model/ModelHero";
-import { ColorVariantSwitcher } from "@/components/sections/model/ColorVariantSwitcher";
-import { FeatureSection } from "@/components/sections/model/FeatureSection";
+import { ConfortSection } from "@/components/sections/model/ConfortSection";
+import { EquipmentSection } from "@/components/sections/model/EquipmentSection";
 import { CinematicSequence } from "@/components/sections/model/CinematicSequence";
 import { ModelGallery } from "@/components/sections/model/ModelGallery";
-import { Specifications } from "@/components/sections/model/Specifications";
+import { Configurator } from "@/components/sections/model/Configurator";
 import { ModelCta } from "@/components/sections/model/ModelCta";
 import { getModel, modelSlugs } from "@/content/models";
 
@@ -46,21 +46,25 @@ export default async function Page({
   return (
     <>
       <ModelHero model={model} />
-      <ColorVariantSwitcher variants={model.colorVariants} name={model.name} />
-      <FeatureSection
-        eyebrow="Confort"
+      <ConfortSection
+        eyebrow="Habitacle"
         heading="Le confort à bord"
-        features={model.comfort}
+        items={model.comfort}
       />
-      <FeatureSection
+      <EquipmentSection
         eyebrow="Équipement"
-        heading="Équipements & technologies"
-        features={model.equipment}
-        alt
+        heading="Technologies embarquées"
+        items={model.equipment}
       />
       <CinematicSequence data={model.cinematic3d} name={model.name} />
       <ModelGallery images={model.gallery} name={model.name} />
-      <Specifications specs={model.specs} pdf={model.pdf} id="specifications" />
+      <Configurator
+        variants={model.colorVariants}
+        specs={model.specs}
+        pdf={model.pdf}
+        name={model.name}
+        id="specifications"
+      />
       <ModelCta name={model.name} />
     </>
   );

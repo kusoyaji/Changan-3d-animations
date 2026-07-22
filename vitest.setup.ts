@@ -15,3 +15,18 @@ if (!window.matchMedia) {
     dispatchEvent: () => false,
   }) as unknown as MediaQueryList;
 }
+
+// jsdom has no IntersectionObserver; Reveal falls through to it after the
+// matchMedia check above, so provide a no-op stub globally.
+if (!("IntersectionObserver" in globalThis)) {
+  class MockIntersectionObserver {
+    observe() {}
+    unobserve() {}
+    disconnect() {}
+    takeRecords() {
+      return [];
+    }
+  }
+  // @ts-expect-error test stub
+  globalThis.IntersectionObserver = MockIntersectionObserver;
+}

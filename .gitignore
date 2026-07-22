@@ -48,3 +48,13 @@ next-env.d.ts
 
 # 3D pipeline intermediates (raw video/frames). Only optimized outputs in public/ are committed.
 scripts/3d/work/
+
+# Local verification/audit screenshots (root-level only; app images live in public/)
+/*.jpeg
+/*.jpg
+/*.png
+
+# Raw 3D source material — inputs to the pipeline, not web assets
+/public/images/CS55PHEV-ImagesFor3D/
+# Raw AI-generated master videos (superseded by the extracted frame sequence)
+/public/images/model/cs55-phev/*.mp4

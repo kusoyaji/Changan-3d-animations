@@ -73,7 +73,7 @@ export function Footer() {
                 aria-label={social.label}
                 className="flex h-11 w-11 items-center justify-center rounded-[10px] opacity-80 transition-opacity duration-150 ease-[var(--ease-out)] hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-ink"
               >
-                <Image src={social.icon} alt="" width={20} height={20} className="h-5 w-5" />
+                <Image src={social.icon} alt="" width={20} height={20} unoptimized className="h-5 w-5" />
               </a>
             ))}
           </div>

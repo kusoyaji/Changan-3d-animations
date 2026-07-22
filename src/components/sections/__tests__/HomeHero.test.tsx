@@ -1,35 +1,21 @@
 import { render, screen } from "@testing-library/react";
 import { HomeHero } from "@/components/sections/HomeHero";
 
-beforeAll(() => {
-  // jsdom has no IntersectionObserver
-  // @ts-expect-error test stub
-  global.IntersectionObserver = class { observe(){} disconnect(){} unobserve(){} };
+test("hero leads with the first model and its CTAs", () => {
+  render(<HomeHero />);
+  expect(screen.getByRole("heading", { level: 1, name: "CS55 PHEV" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /Réserver un essai/i })).toHaveAttribute("href", "/essai");
+  expect(screen.getByRole("link", { name: /Découvrir/i })).toHaveAttribute("href", "/modeles/cs55-phev");
 });
 
-test("renders headline and both CTAs", () => {
+test("hero exposes a model switcher across the whole range", () => {
   render(<HomeHero />);
-  expect(screen.getByText(/Le voyage/)).toBeInTheDocument();
-  expect(screen.getByRole("link", { name: "Réserver un essai" })).toBeInTheDocument();
-  expect(screen.getByRole("link", { name: "Explorer la gamme" })).toBeInTheDocument();
+  const tabs = screen.getAllByRole("tab");
+  expect(tabs).toHaveLength(6);
+  expect(tabs[0]).toHaveAttribute("aria-selected", "true");
 });
 
-test("renders the eyebrow, subtext, and frosted spec strip", () => {
+test("renders the active model image with a descriptive alt", () => {
   render(<HomeHero />);
-  expect(screen.getByText(/Conçue pour la route marocaine/)).toBeInTheDocument();
-  expect(
-    screen.getByText(/Une gamme qui réunit design, technologie et confort/)
-  ).toBeInTheDocument();
-  expect(screen.getByText("CS55 PHEV")).toBeInTheDocument();
-  expect(screen.getByText("Hybride rechargeable")).toBeInTheDocument();
-  expect(screen.getByText("1 100 km")).toBeInTheDocument();
-  expect(screen.getByText("8 villes")).toBeInTheDocument();
-  expect(screen.getByText("8 showrooms")).toBeInTheDocument();
-});
-
-test("renders the hero car image with priority and a descriptive alt", () => {
-  render(<HomeHero />);
-  const img = screen.getByAltText("Changan CS55 PHEV");
-  expect(img).toBeInTheDocument();
-  expect(img.tagName).toBe("IMG");
+  expect(screen.getByAltText("CS55 PHEV")).toBeInTheDocument();
 });

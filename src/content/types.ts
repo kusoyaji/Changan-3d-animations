@@ -1,5 +1,5 @@
 export type ColorVariant = { label: string; hex: string; image: string };
-export type Feature = { title: string; text?: string; image: string };
+export type Feature = { title: string; text?: string; image: string; mobileImage?: string };
 export type Spec = { group: string; label: string; value: string };
 export type CinematicBeat = { at: number; eyebrow: string; title: string; text?: string };
 export type Cinematic3D = {
@@ -16,6 +16,7 @@ export type Model = {
   name: string;
   nameplate: string;
   tagline: string;
+  logo?: string;
   heroDesktop: string;
   heroMobile: string;
   colorVariants: ColorVariant[];
@@ -35,6 +36,8 @@ export type Showroom = {
   address: string;
   phone: string;
   hours: string;
+  sav?: string;
   image: string;
+  directionLink?: string;
   mapEmbed?: string;
 };

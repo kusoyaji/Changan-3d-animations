@@ -1,0 +1,8 @@
+{
+  "frameCount": 180,
+  "mobileFrameCount": 90,
+  "framePath": "/images/model/cs55-phev/3d/desktop/{i}.avif",
+  "mobileFramePath": "/images/model/cs55-phev/3d/mobile/{i}.avif",
+  "poster": "/images/model/cs55-phev/3d/poster.avif",
+  "webpFallback": true
+}

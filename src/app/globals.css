@@ -25,6 +25,19 @@ html { -webkit-font-smoothing: antialiased; }
 body { background: var(--color-field); color: var(--color-ink); font-family: var(--font-body), system-ui, sans-serif; }
 
 @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+/* Slow cinematic push on the active slide image. */
+@keyframes ken-burns { from { transform: scale(1.001); } to { transform: scale(1.09); } }
+/* Left-anchored progress fill, timed to the slideshow autoplay interval. */
+@keyframes grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+/* Gentle vertical snapping on desktop so the full-bleed model sections
+   (Confort, Équipement) each grab the viewport instead of leaving an
+   orphaned sliver of the previous panel. `proximity` only engages near a
+   snap point, so long free-scrolling sections (cinematic, gallery) and every
+   other page are unaffected. Elements opt in with `scroll-snap-align`. */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  html { scroll-snap-type: y proximity; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; transition-delay: 0s !important; }
 }

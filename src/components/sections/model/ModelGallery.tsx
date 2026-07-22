@@ -1,14 +1,14 @@
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
+import { FramedImage } from "@/components/ui/FramedImage";
 
 export function ModelGallery({
   images,
   name,
 }: {
-  images: string[];
-  name: string;
+  readonly images: string[];
+  readonly name: string;
 }) {
   if (images.length === 0) return null;
 
@@ -17,24 +17,22 @@ export function ModelGallery({
       <Container className="py-16 lg:py-24">
         <Eyebrow>Galerie</Eyebrow>
 
-        <Reveal>
-          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {images.map((image, i) => (
-              <div
-                key={`${image}-${i}`}
-                className="group relative aspect-[4/3] overflow-hidden rounded-[16px]"
-              >
-                <Image
+        {/* Single column, large: each image shows the whole car at its true ratio. */}
+        <div className="mt-10 flex flex-col gap-6 lg:mt-14 lg:gap-8">
+          {images.map((image, i) => (
+            <Reveal key={`${image}-${i}`}>
+              <div className="group overflow-hidden rounded-[16px]">
+                <FramedImage
                   src={image}
                   alt={`${name} — vue ${i + 1}`}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-300 ease-[var(--ease-out)] group-hover:scale-[1.03]"
+                  sizes="(min-width: 1280px) 1200px, 100vw"
+                  priority={i === 0}
+                  imgClassName="transition-transform duration-[600ms] ease-[var(--ease-out)] group-hover:scale-[1.03]"
                 />
               </div>
-            ))}
-          </div>
-        </Reveal>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </section>
   );

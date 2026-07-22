@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { bricolage, interTight, plexMono, changan } from "./fonts";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingContact } from "@/components/layout/FloatingContact";
 import "./globals.css";
 
 const description =
@@ -36,6 +37,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <FloatingContact />
       </body>
     </html>
   );

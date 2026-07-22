@@ -6,10 +6,10 @@ import { site } from "@/content/site";
 
 const links = [
   { label: "Modèles", href: "/modeles" },
-  { label: "Hybride", href: "/hybride" },
+  { label: "Hybride", href: "/modeles/cs55-phev" },
   { label: "Essai", href: "/essai" },
   { label: "Reprise", href: "/reprise" },
-  { label: "Contact", href: "/contact" },
+  { label: "À propos", href: "/a-propos" },
 ];
 
 const legalLinks = [

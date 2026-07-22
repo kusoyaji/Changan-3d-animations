@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { QuickActions } from "@/components/sections/QuickActions";
 import { Lineup } from "@/components/sections/Lineup";
+import { CategoryBento } from "@/components/sections/CategoryBento";
 import { HybridHighlight } from "@/components/sections/HybridHighlight";
+import { TrustStrip } from "@/components/sections/TrustStrip";
 import { ShowroomTeaser } from "@/components/sections/ShowroomTeaser";
 import { LeadCta } from "@/components/sections/LeadCta";
 
@@ -17,8 +19,10 @@ export default function Home() {
     <>
       <HomeHero />
       <QuickActions />
+      <CategoryBento />
       <Lineup />
       <HybridHighlight />
+      <TrustStrip />
       <ShowroomTeaser />
       <LeadCta />
     </>

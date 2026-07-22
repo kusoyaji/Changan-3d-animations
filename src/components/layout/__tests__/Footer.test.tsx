@@ -45,8 +45,8 @@ test("renders legal links and copyright with current year", () => {
 test("renders nav-ish links section", () => {
   render(<Footer />);
   expect(screen.getByRole("link", { name: "Modèles" })).toHaveAttribute("href", "/modeles");
-  expect(screen.getByRole("link", { name: "Hybride" })).toHaveAttribute("href", "/hybride");
+  expect(screen.getByRole("link", { name: "Hybride" })).toHaveAttribute("href", "/modeles/cs55-phev");
   expect(screen.getByRole("link", { name: "Essai" })).toHaveAttribute("href", "/essai");
   expect(screen.getByRole("link", { name: "Reprise" })).toHaveAttribute("href", "/reprise");
-  expect(screen.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
+  expect(screen.getByRole("link", { name: "À propos" })).toHaveAttribute("href", "/a-propos");
 });

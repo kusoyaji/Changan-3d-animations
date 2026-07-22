@@ -13,11 +13,11 @@ beforeAll(() => {
   };
 });
 
-test("hybrid highlight links to /hybride", () => {
+test("hybrid highlight links to the CS55 PHEV model page", () => {
   render(<HybridHighlight />);
-  expect(screen.getByRole("link", { name: /hybride/i })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: /CS55 PHEV/i })).toHaveAttribute(
     "href",
-    "/hybride"
+    "/modeles/cs55-phev"
   );
 });
 
